@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> 事件</title>
+</head>
+<body>
+    <input type='text' id='num1' />
+    <select id='operate'>
+        <option value='+'>+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="/">/</option>
+    </select>
+    <input type='text' id='num2' />
+    <input type='button' value=' = ' onclick="count()" />
+    <input type='text' id='result' />
+    <script type="text/javascript">
+        function count() {
+            /*此处写代码*/
+            //将所有DOM写入对象中   
+            var calObj = {
+                num1Input:document.getElementById('num1'),
+                calSign:document.getElementById('operate'),
+                num2Input:document.getElementById('num2'),
+                numResult:document.getElementById('result')
+            };
+
+            //运算操作函数对象
+            var operateObj = {
+                add:function (){
+                    calObj.numResult.value = +calObj.num1Input.value + +calObj.num2Input.value;
+                    return calObj.numResult.value;
+                },
+                subtract:function(){
+                    calObj.numResult.value = calObj.num1Input.value - calObj.num2Input.value;
+                    return calObj.numResult.value;
+                },
+                multiply:function(){
+                    calObj.numResult.value = calObj.num1Input.value * calObj.num2Input.value;
+                    return calObj.numResult.value;
+                },
+                divide:function(){
+                    calObj.numResult.value = calObj.num1Input.value / calObj.num2Input.value;
+                    return calObj.numResult.value;
+                }
+            };
+           
+
+            switch(calObj.calSign.value) {
+                case '+':
+                    operateObj.add();
+                    break;
+                case '-':
+                    operateObj.subtract();
+                    break;
+                case '*':
+                    operateObj.multiply();
+                    break;
+                case '/':
+                    operateObj.divide();
+                    break;
+            }
+
+        }
+    </script>
+</body>
+</html>
