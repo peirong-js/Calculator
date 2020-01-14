@@ -3,8 +3,16 @@
 <head>
     <title> 事件</title>
     <meta charset="UTF-8">
+    <style type="text/css">
+        .content{
+            width:800px;
+            height:200px;
+            background:gray;
+        }
+    </style>
 </head>
 <body>
+    <div class="content">
     <input type='text' id='num1' />
     <select id='operate'>
         <option value='+'>+</option>
@@ -15,6 +23,7 @@
     <input type='text' id='num2' />
     <input type='button' value=' = ' onclick="count()" />
     <input type='text' id='result' />
+    </div>
     <script type="text/javascript">
         function count() {
             /*此处写代码*/
